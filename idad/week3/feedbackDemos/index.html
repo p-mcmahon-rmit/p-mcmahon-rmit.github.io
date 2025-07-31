@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="demo.css" />
 
     <script src="https://unpkg.com/konva@9/konva.min.js"></script>
 
@@ -15,35 +13,67 @@
 
     <title>Feedback Demos</title>
 
-    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="icon" type="image/png" href="./favicon.png" />
 
+    <!-- Presentation Notes -->
+    <!-- 
+    - ?what is feedback
+    - feedback is some form of signal returned after a user action
+    - provides information, even if it is as simple as recognising input
+    - not necessarily tied directly to the process that you might have triggered
+    - eg computer mouse click
+    - mechanical keyboards
+    - computers operations are often hidden
+    - digital eg refresh page
+    - ?refresh canvas : what discrete parts of feedback can we identify?
+    - ?what are some other common forms of digital feedback when using a web browser?
+    - importance of timing : creating perception of "causality"
+    - this is why we're covering time based visuals - transition and animation
+
+    - wait times, two different approaches
+    - loading bar
+    - throbber : loading icon
+    - mental models and design patterns allow feedback to gain meaning in certain contexts
+    - buffering frustrating because switch from loading bar to throbber
+    - facebook security - sometimes people want wait times
+    - cultural/personal expectations around wait/load times
+    - throwback to categories being fake
+
+    - let's jump into some more web examples
+    - https://patrickahase.github.io/feedbackDemo
+    - ?spend 2 mins playing with the buttons then we'll discuss satisfying and frustrating
+    - go through in order
+    - all about context
+    -->
   </head>
 
   <body>
-
     <h1 id="pageHeading">Feedback Demos</h1>
 
-    <p>note: non-responsive, you need to refresh after resizing window (including opening dev tools)</p>
+    <p>
+      note: non-responsive, you need to refresh after resizing window (including
+      opening dev tools)
+    </p>
 
     <div>
-
       <button id="slowFeedback">button 1</button>
 
-      <button id="fastSlowFeedback" onclick="buttonTextChange(this)">button 2</button>
+      <button id="fastSlowFeedback" onclick="buttonTextChange(this)">
+        button 2
+      </button>
 
       <button id="activeButton">button 3</button>
 
-      <button id="pointerButton" onclick="alert('you clicked me')">button 4</button>
+      <button id="pointerButton" onclick="alert('you clicked me')">
+        button 4
+      </button>
 
       <button id="scaleButton">button 5</button>
-        
+
       <button>button 6</button>
-      
     </div>
 
-    
-
-    <hr style="width: 80%;" />
+    <hr style="width: 80%" />
 
     <div id="stageContainer"></div>
 
@@ -54,7 +84,16 @@
       </div>
       <div class="controlBox">
         <label for="temp">Change cursor delay (ms):</label><br />
-        <input type="range" id="cursorDelayInput" name="temp" list="markers" min="0" max="1000" step="100" value="0" />
+        <input
+          type="range"
+          id="cursorDelayInput"
+          name="temp"
+          list="markers"
+          min="0"
+          max="1000"
+          step="100"
+          value="0"
+        />
         <datalist id="markers">
           <option value="0" label="0"></option>
           <option value="100" label="100"></option>
@@ -69,13 +108,6 @@
           <option value="1000" label="1000"></option>
         </datalist>
       </div>
-      
     </div>
-
-    
-
-    
-
   </body>
-
 </html>
