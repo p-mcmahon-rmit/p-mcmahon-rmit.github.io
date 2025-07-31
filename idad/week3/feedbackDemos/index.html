@@ -48,66 +48,79 @@
   </head>
 
   <body>
-    <h1 id="pageHeading">Feedback Demos</h1>
+    <header>
+      <h1 id="pageHeading">Feedback</h1>
+    </header>
 
-    <p>
-      note: non-responsive, you need to refresh after resizing window (including
-      opening dev tools)
-    </p>
+    <main>
+      <section>
+        <div class="loadExamples">
+          <img src="./assets/loading-throbber.gif" alt="loading throbber" />
+          <img src="./assets/progress-bar.gif" alt="loading bar" />
+        </div>
+      </section>
+      <section>
+        <h3>Custom Feedback Demos</h3>
+        <p>
+          note: non-responsive, you need to refresh after resizing window
+          (including opening dev tools)
+        </p>
+        <div id="stageContainer"></div>
 
-    <div>
-      <button id="slowFeedback">button 1</button>
+        <div class="controlBar">
+          <div class="controlBox"></div>
+          <div class="controlBox">
+            <button id="cacheButton">Update Cache</button>
+          </div>
+          <div class="controlBox">
+            <label for="temp">Change cursor delay (ms):</label><br />
+            <input
+              type="range"
+              id="cursorDelayInput"
+              name="temp"
+              list="markers"
+              min="0"
+              max="1000"
+              step="100"
+              value="0"
+            />
+            <datalist id="markers">
+              <option value="0" label="0"></option>
+              <option value="100" label="100"></option>
+              <option value="200" label="200"></option>
+              <option value="300" label="300"></option>
+              <option value="400" label="400"></option>
+              <option value="500" label="500"></option>
+              <option value="600" label="600"></option>
+              <option value="700" label="700"></option>
+              <option value="800" label="800"></option>
+              <option value="900" label="900"></option>
+              <option value="1000" label="1000"></option>
+            </datalist>
+          </div>
+        </div>
+      </section>
 
-      <button id="fastSlowFeedback" onclick="buttonTextChange(this)">
-        button 2
-      </button>
+      <hr style="width: 80%" />
 
-      <button id="activeButton">button 3</button>
+      <section>
+        <h3>Feedback Button Demos</h3>
+        <button id="slowFeedback">button 1</button>
 
-      <button id="pointerButton" onclick="alert('you clicked me')">
-        button 4
-      </button>
+        <button id="fastSlowFeedback" onclick="buttonTextChange(this)">
+          button 2
+        </button>
 
-      <button id="scaleButton">button 5</button>
+        <button id="activeButton">button 3</button>
 
-      <button>button 6</button>
-    </div>
+        <button id="pointerButton" onclick="alert('you clicked me')">
+          button 4
+        </button>
 
-    <hr style="width: 80%" />
+        <button id="scaleButton">button 5</button>
 
-    <div id="stageContainer"></div>
-
-    <div class="controlBar">
-      <div class="controlBox"></div>
-      <div class="controlBox">
-        <button id="cacheButton">Update Cache</button>
-      </div>
-      <div class="controlBox">
-        <label for="temp">Change cursor delay (ms):</label><br />
-        <input
-          type="range"
-          id="cursorDelayInput"
-          name="temp"
-          list="markers"
-          min="0"
-          max="1000"
-          step="100"
-          value="0"
-        />
-        <datalist id="markers">
-          <option value="0" label="0"></option>
-          <option value="100" label="100"></option>
-          <option value="200" label="200"></option>
-          <option value="300" label="300"></option>
-          <option value="400" label="400"></option>
-          <option value="500" label="500"></option>
-          <option value="600" label="600"></option>
-          <option value="700" label="700"></option>
-          <option value="800" label="800"></option>
-          <option value="900" label="900"></option>
-          <option value="1000" label="1000"></option>
-        </datalist>
-      </div>
-    </div>
+        <button>button 6</button>
+      </section>
+    </main>
   </body>
 </html>

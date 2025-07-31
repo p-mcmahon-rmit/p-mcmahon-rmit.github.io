@@ -1,40 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-*{
+* {
   box-sizing: border-box;
 }
 
-:root{
-/* Paperback-2 Palette Created by Doph */
-/* https://lospec.com/palette-list/paperback-2 */
+:root {
+  /* Paperback-2 Palette Created by Doph */
+  /* https://lospec.com/palette-list/paperback-2 */
   --col02: #382b26;
   --col01: #b8c2b9;
   --border: solid 4px var(--col01);
+}
+
+header {
+  display: flex;
+  justify-content: center;
 }
 
 body {
   font-family: "Work Sans", serif;
   background-color: var(--col01);
   color: var(--col02);
+
+  margin-bottom: 3rem;
+}
+
+main,
+section {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 3rem;
 }
 
-#cacheButton{
+.loadExamples {
+  height: 3rem;
+  display: flex;
+  gap: 1rem;
+}
+
+#cacheButton {
   background-color: var(--col02);
   color: var(--col01);
-  border-width: 0; 
+  border-width: 0;
   font-size: 2rem;
   transition: 0.03s;
   border-radius: 1rem;
 }
-#cacheButton:hover{
+#cacheButton:hover {
   border-radius: 0;
 }
-#cacheButton:active{
+#cacheButton:active {
   filter: invert();
 }
 datalist {
@@ -48,15 +65,15 @@ option {
   padding: 0;
 }
 
-#stageContainer{
+#stageContainer {
   width: 80%;
 }
 
-.controlBar{
+.controlBar {
   width: calc(80% + 12px);
   display: flex;
 }
-.controlBox{
+.controlBox {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -92,7 +109,7 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -12px; /* Centers thumb on the track */
   background-color: var(--col02);
   height: 2rem;
-  width: 1rem;    
+  width: 1rem;
 }
 input[type="range"]:focus::-webkit-slider-thumb {
   border: 1px solid var(--col01);
@@ -116,62 +133,61 @@ input[type="range"]::-moz-range-thumb {
 input[type="range"]:focus::-moz-range-thumb {
   border: 1px solid var(--col01);
   outline: 3px solid var(--col02);
-  outline-offset: 0.125rem;     
+  outline-offset: 0.125rem;
 }
 
-
 /***** Button Demos *****/
-#slowFeedback{
+#slowFeedback {
   background-color: lightgray;
   border: 1px darkgrey solid;
   border-radius: 3px;
   transition: 3s;
 }
-#slowFeedback:hover{
+#slowFeedback:hover {
   background-color: darkgrey;
 }
-#fastSlowFeedback{
+#fastSlowFeedback {
   background-color: lightgray;
   border: 1px darkgrey solid;
   border-radius: 3px;
   transition: 1s;
 }
-#fastSlowFeedback:hover{
+#fastSlowFeedback:hover {
   background-color: darkgrey;
   transition: 0s;
 }
-#activeButton{
+#activeButton {
   background-color: lightgray;
   border: 1px darkgrey solid;
   border-radius: 3px;
   transition: 1s;
 }
-#activeButton:hover{
+#activeButton:hover {
   background-color: darkgrey;
   transition: 0s;
 }
-#activeButton:active{
+#activeButton:active {
   background-color: rgb(87, 87, 87);
 }
-#pointerButton{
+#pointerButton {
   background-color: lightgray;
   border: 1px darkgrey solid;
   border-radius: 3px;
   transition: 1s;
 }
-#pointerButton:hover{
+#pointerButton:hover {
   background-color: darkgrey;
   transition: 0s;
   cursor: pointer;
 }
-#scaleButton{
+#scaleButton {
   background-color: lightgray;
   border: 1px darkgrey solid;
   border-radius: 3px;
   transition: 0s;
 }
-#scaleButton:hover{
+#scaleButton:hover {
   background-color: darkgrey;
   transition: 3s;
-  transform: scale(2.0);
+  transform: scale(2);
 }
