@@ -14,52 +14,76 @@
     <title>Feedback Demos</title>
 
     <link rel="icon" type="image/png" href="./favicon.png" />
-
-    <!-- Presentation Notes -->
-    <!-- 
-    - ?what is feedback
-    - feedback is some form of signal returned after a user action
-    - provides information, even if it is as simple as recognising input
-    - not necessarily tied directly to the process that you might have triggered
-    - eg computer mouse click
-    - mechanical keyboards
-    - computers operations are often hidden
-    - digital eg refresh page
-    - ?refresh canvas : what discrete parts of feedback can we identify?
-    - ?what are some other common forms of digital feedback when using a web browser?
-    - importance of timing : creating perception of "causality"
-    - this is why we're covering time based visuals - transition and animation
-
-    - wait times, two different approaches
-    - loading bar
-    - throbber : loading icon
-    - mental models and design patterns allow feedback to gain meaning in certain contexts
-    - buffering frustrating because switch from loading bar to throbber
-    - facebook security - sometimes people want wait times
-    - cultural/personal expectations around wait/load times
-    - throwback to categories being fake
-
-    - let's jump into some more web examples
-    - https://patrickahase.github.io/feedbackDemo
-    - ?spend 2 mins playing with the buttons then we'll discuss satisfying and frustrating
-    - go through in order
-    - all about context
-    -->
   </head>
 
   <body>
     <header>
-      <h1 id="pageHeading">Feedback</h1>
+      <h1 id="pageHeading">Feedback Presentation</h1>
     </header>
 
     <main>
       <section>
+        <!-- detail animation trick from below -->
+        <!-- https://css-tricks.com/how-to-animate-the-details-element/ -->
+        <!-- 
+        - ?what is feedback
+        - feedback is some form of signal returned after a user action
+        - eg: details element triangle : pointer cursor
+        - provides information, even if it is as simple as recognising input
+        - not necessarily directly part of the process that you might have triggered
+        - eg computer mouse click
+        - mechanical keyboards : feedback as aesthetic
+        - computers operations are often hidden
+        - digital eg refresh page
+        - ?refresh canvas : what discrete parts of feedback can we identify?
+        - ?what are some other common forms of digital feedback when using a web browser?
+        - importance of timing : creating perception of "causality"
+        -->
+        <details>
+          <summary>What is Feedback?</summary>
+          <p>
+            "the signal the machine returns to the user as the result of a user
+            action"
+          </p>
+          <p>
+            Murray, J 2012,
+            <em>
+              Inventing the Medium: Principles of Interaction Design as a
+              Cultural Practice
+            </em>
+            , MIT Press, Cambridge
+          </p>
+
+          <em></em>
+        </details>
+        <!-- 
+        - wait times, two different approaches
+        - loading bar
+        - throbber : loading icon
+        - common design patterns allow feedback to gain meaning in certain contexts
+        - buffering frustrating because switch from loading bar to throbber
+        - facebook security example : sometimes people want wait times
+        - cultural/personal/historical expectations around wait/load times
+        -->
+        <h4>Loading Feedback</h4>
         <div class="loadExamples">
-          <img src="./assets/loading-throbber.gif" alt="loading throbber" />
-          <img src="./assets/progress-bar.gif" alt="loading bar" />
+          <figure>
+            <img src="./assets/loading-throbber.gif" alt="loading throbber" />
+            <figcaption>Loading Throbber</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/progress-bar.gif" alt="loading bar" />
+            <figcaption>Loading Bar</figcaption>
+          </figure>
         </div>
       </section>
+
+      <hr style="width: 80%" />
+
       <section>
+        <!-- 
+        - how does feedback change the feel of interaction?
+        -->
         <h3>Custom Feedback Demos</h3>
         <p>
           note: non-responsive, you need to refresh after resizing window
@@ -104,6 +128,12 @@
       <hr style="width: 80%" />
 
       <section>
+        <!-- 
+        - let's jump into some more web examples
+        - ?spend 2 mins playing with the buttons then we'll discuss satisfying and frustrating
+        - go through in order
+        - all about context
+        -->
         <h3>Feedback Button Demos</h3>
         <button id="slowFeedback">button 1</button>
 
