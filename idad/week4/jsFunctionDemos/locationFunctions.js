@@ -2,6 +2,8 @@ document.getElementById("checkLocationBtn").addEventListener("click", checkLocat
 
 let locationResult = document.getElementById("locationSpan");
 let addressResult = document.getElementById("addressSpan");
+let weatherResult = document.getElementById("weatherSpan");
+let tempResult = document.getElementById("tempSpan");
 
 const locationOptions = {
   enableHighAccuracy: true,
@@ -17,6 +19,7 @@ function foundLocation(pos){
   console.log(pos);
   locationResult.textContent = `${pos.coords.latitude}, ${pos.coords.longitude}`;
   getMapData(pos.coords.latitude, pos.coords.longitude);
+  getWeatherData(pos.coords.latitude, pos.coords.longitude);
 }
 
 function locationError(err) {
@@ -40,4 +43,23 @@ async function getMapData(lat, long){
 function parseMapInfo(mapFeatures){
   addressResult.textContent = mapFeatures.properties.display_name;
   console.log(mapFeatures);
+}
+
+async function getWeatherData(lat, long){
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&current=temperature_2m,weather_code&forecast_days=1`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const result = await response.json();
+    // console.log(result);
+    parseWeatherInfo(result);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+function parseWeatherInfo(weatherObject){
+  tempResult.textContent = weatherObject.current.temperature_2m;
 }
