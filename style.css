@@ -2,8 +2,8 @@
 
 :root{
   /* based 1 bit monitor glow by Polyducks https://lospec.com/palette-list/1bit-monitor-glow */
-  --col1: #222323;
-  --col2: #f0f6f0;
+  --col01: #222323;
+  --col02: #f0f6f0;
   --border: solid 4px var(--col02);
 }
 /* Change custom properties if user prefers light mode */
@@ -38,4 +38,6 @@ hr{
 }
 
 footer {
+  background-color: var(--col02);
+  color: var(--col01);
 }
