@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="demo.css" />
+
+    <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+
+    <script src="demoScript.js" defer></script>
+
+    <title>Feedback Demos</title>
+
+    <link rel="icon" type="image/png" href="./favicon.png" />
+  </head>
+
+  <body>
+    <header>
+      <h1 id="pageHeading">Feedback Presentation</h1>
+    </header>
+
+    <main>
+      <section>
+        <!-- detail animation trick from below -->
+        <!-- https://css-tricks.com/how-to-animate-the-details-element/ -->
+        <!-- 
+        - ?what is feedback
+        - feedback is some form of signal returned after a user action
+        - eg: details element triangle : pointer cursor
+        - provides information, even if it is as simple as recognising input
+        - not necessarily directly part of the process that you might have triggered
+        - eg computer mouse click
+        - mechanical keyboards : feedback as aesthetic
+        - computers operations are often hidden
+        - digital eg refresh page
+        - ?refresh canvas : what discrete parts of feedback can we identify?
+        - ?what are some other common forms of digital feedback when using a web browser?
+        - importance of timing : creating perception of "causality"
+        -->
+        <details>
+          <summary>What is Feedback?</summary>
+          <p>
+            "the signal the machine returns to the user as the result of a user
+            action"
+          </p>
+          <p>
+            Murray, J 2012,
+            <em>
+              Inventing the Medium: Principles of Interaction Design as a
+              Cultural Practice
+            </em>
+            , MIT Press, Cambridge
+          </p>
+
+          <em></em>
+        </details>
+        <!-- 
+        - wait times, two different approaches
+        - loading bar
+        - throbber : loading icon
+        - common design patterns allow feedback to gain meaning in certain contexts
+        - buffering frustrating because switch from loading bar to throbber
+        - facebook security example : sometimes people want wait times
+        - cultural/personal/historical expectations around wait/load times
+        -->
+        <h4>Loading Feedback</h4>
+        <div class="loadExamples">
+          <figure>
+            <img src="./assets/loading-throbber.gif" alt="loading throbber" />
+            <figcaption>Loading Throbber</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/progress-bar.gif" alt="loading bar" />
+            <figcaption>Loading Bar</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <hr style="width: 80%" />
+
+      <section>
+        <!-- 
+        - how does feedback change the feel of interaction?
+        -->
+        <h3>Custom Feedback Demos</h3>
+        <p>
+          note: non-responsive, you need to refresh after resizing window
+          (including opening dev tools)
+        </p>
+        <div id="stageContainer"></div>
+
+        <div class="controlBar">
+          <div class="controlBox"></div>
+          <div class="controlBox">
+            <button id="cacheButton">Update Cache</button>
+          </div>
+          <div class="controlBox">
+            <label for="temp">Change cursor delay (ms):</label><br />
+            <input
+              type="range"
+              id="cursorDelayInput"
+              name="temp"
+              list="markers"
+              min="0"
+              max="1000"
+              step="100"
+              value="0"
+            />
+            <datalist id="markers">
+              <option value="0" label="0"></option>
+              <option value="100" label="100"></option>
+              <option value="200" label="200"></option>
+              <option value="300" label="300"></option>
+              <option value="400" label="400"></option>
+              <option value="500" label="500"></option>
+              <option value="600" label="600"></option>
+              <option value="700" label="700"></option>
+              <option value="800" label="800"></option>
+              <option value="900" label="900"></option>
+              <option value="1000" label="1000"></option>
+            </datalist>
+          </div>
+        </div>
+      </section>
+
+      <hr style="width: 80%" />
+
+      <section>
+        <!-- 
+        - let's jump into some more web examples
+        - ?spend 2 mins playing with the buttons then we'll discuss satisfying and frustrating
+        - go through in order
+        - all about context
+        -->
+        <h3>Feedback Button Demos</h3>
+        <button id="slowFeedback">button 1</button>
+
+        <button id="fastSlowFeedback" onclick="buttonTextChange(this)">
+          button 2
+        </button>
+
+        <button id="activeButton">button 3</button>
+
+        <button id="pointerButton" onclick="alert('you clicked me')">
+          button 4
+        </button>
+
+        <button id="scaleButton">button 5</button>
+
+        <button>button 6</button>
+      </section>
+    </main>
+  </body>
+</html>
